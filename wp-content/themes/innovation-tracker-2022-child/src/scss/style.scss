@@ -9,16 +9,16 @@
  Version:      0.1
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
- Text Domain:  innovationtracker
+ Text Domain:  innovation-tracker-2022-child
 */
 
 @use "sass:math";
 
-$themePath: "/wp-content/themes/innovationtracker/build";
+$themePath: "/wp-content/themes/innovation-tracker-2022-child/build";
 
-$bootstrap-icons-font-src: url("../node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2")
+$bootstrap-icons-font-src: url("fonts/bootstrap-icons.woff2")
     format("woff2"),
-  url("../node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff")
+  url("fonts/bootstrap-icons.woff")
     format("woff");
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "../../node_modules/bootstrap-icons/font/bootstrap-icons";

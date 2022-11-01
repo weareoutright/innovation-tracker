@@ -1,0 +1,29 @@
+.component.component-tracker-prompts {
+  padding:em(296) 0 em(221);
+  .tracker-prompts__intro {
+    margin-bottom:em(85);
+    h2 {
+      @include typeHeaderLarge;
+      @include typeHeaderContrast;
+      text-align:center;
+    }
+  }
+  .tracker-prompts__prompt {
+    display:flex;
+    margin-bottom:em(63);
+    align-items:center;
+    > * {
+      flex:auto;
+    }
+    .prompt__prompt {
+      @include typeLarger;
+      @include typeContrast;
+      white-space:nowrap;
+      padding-right:1em;
+    }
+    .prompt__question {
+
+    }
+  }
+
+}

@@ -1,0 +1,59 @@
+// ==== STYLES ==== //
+/*!
+ Theme Name:   EDF Innovation Tracker
+ Theme URI:    https://weareoutright.com
+ Description:  Innovation Tracker Theme
+ Author:       Outright
+ Author URI:   https://weareoutright.com
+ Template:     twentytwentyone
+ Version:      0.1
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain:  innovationtracker
+*/
+
+@use "sass:math";
+
+$themePath: "/wp-content/themes/innovationtracker/build";
+
+$bootstrap-icons-font-src: url("../node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2")
+    format("woff2"),
+  url("../node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff")
+    format("woff");
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons";
+
+@import "variables";
+@import "typography";
+@import "grid";
+@import "base";
+
+// Components: Modular elements styles
+@import "components/component";
+@import "components/button";
+@import "components/table";
+@import "components/site-header";
+@import "components/site-footer";
+@import "components/post-preview";
+
+// Nav: navigation elements
+@import "nav/nav-site";
+@import "nav/nav-jump";
+
+// Blocks: Reusable blocks
+@import "blocks/wp-blocks";
+@import "blocks/hero-with-cta";
+@import "blocks/tracker-prompts";
+@import "blocks/updates";
+@import "blocks/latest-posts";
+@import "blocks/posts-archive";
+@import "blocks/back-to-top";
+
+
+// Posts: Post types
+@import "posts/post";
+
+// Pages: Import every page that has its own specific styles
+@import "pages/page";
+@import "pages/home";
+@import "pages/methodology";

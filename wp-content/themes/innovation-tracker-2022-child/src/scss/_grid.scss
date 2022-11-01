@@ -1,0 +1,164 @@
+$grid-gutter-width: 30px;
+$grid-outer-padding: 110px;
+$container-max: 1050px;
+$container-wide-max: 1400px;
+
+$container-with-padding: $container-max + (2 * $grid-outer-padding);
+$container-wide-with-padding: $container-wide-max + (2 * $grid-outer-padding);
+$container-padding: calc((100% - #{$container-max}) / 2);
+
+$grid-outer-padding-mobile: 30px;
+
+.row {
+  margin-left: -0.5 * $grid-gutter-width;
+  margin-right: -0.5 * $grid-gutter-width;
+  > * {
+    padding-left: 0.5 * $grid-gutter-width;
+    padding-right: 0.5 * $grid-gutter-width;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: $container-with-padding;
+  position: relative;
+  padding-left: $grid-outer-padding;
+  padding-right: $grid-outer-padding;
+  @media screen and (max-width: 800px) {
+    padding-left: $grid-outer-padding-mobile;
+    padding-right: $grid-outer-padding-mobile;
+  }
+}
+
+.container-wide {
+  @extend .container;
+  max-width: $container-wide-with-padding;
+}
+
+.container-breakout {
+  width: 100vw;
+  margin-left: calc(-1 * (50vw - (#{math.div($container-max, 2)})));
+  max-width: none;
+  @media screen and (max-width: $container-with-padding) {
+    margin-left: -1 * $grid-outer-padding;
+  }
+  @media screen and (max-width: 800px) {
+    margin-left: -1 * $grid-outer-padding-mobile;
+  }
+  &.container-breakout-left {
+    padding-right:0;
+    margin-left: calc(-1 * (50vw - #{math.div($container-max, 2)}));
+    padding-left: calc(50vw - #{math.div($container-max, 2)});
+    @media screen and (max-width: $container-with-padding) {
+      padding-left: $grid-outer-padding;
+      margin-left: -$grid-outer-padding;
+    }
+    @media screen and (max-width: 800px) {
+      padding-left: $grid-outer-padding-mobile;
+      margin-left: -$grid-outer-padding-mobile;
+    }
+  }
+  &.container-breakout-right {
+    @media screen and (max-width: $container-with-padding) {
+      margin-left:0;
+    }
+    padding-right: calc(50vw - #{math.div($container-max, 2)});
+    @media screen and (max-width: $container-with-padding) {
+      padding-right: $grid-outer-padding;
+    }
+    @media screen and (max-width: 800px) {
+      padding-right: $grid-outer-padding-mobile;
+    }
+  }
+}
+
+.container-breakout-wide {
+  @extend .container-breakout;
+  margin-left: calc(
+    -1 * (50vw -
+          (#{math.div($container-wide-max, 2) + 0.5 * $grid-gutter-width}))
+  );
+  @media screen and (max-width: $container-wide-with-padding) {
+    margin-left: -1 * $grid-outer-padding;
+  }
+  @media screen and (max-width: 800px) {
+    margin-left: -1 * $grid-outer-padding-mobile;
+  }
+  &.container-breakout-left {
+    padding-right:0;
+    margin-left:calc(-1 * (50vw - #{math.div($container-wide-max, 2)}));
+    padding-left: calc(50vw - #{math.div($container-wide-max, 2)});
+    @media screen and (max-width: $container-wide-with-padding) {
+      padding-left: $grid-outer-padding;
+      margin-left: $grid-outer-padding;
+    }
+    @media screen and (max-width: 800px) {
+      padding-left: $grid-outer-padding-mobile;
+      margin-left: -$grid-outer-padding-mobile;
+    }
+  }
+  &.container-breakout-right {
+    @media screen and (max-width: $container-wide-with-padding) {
+      margin-left:0;
+    }
+    padding-right: calc(50vw - #{math.div($container-wide-max, 2)});
+    @media screen and (max-width: $container-wide-with-padding) {
+      padding-right: $grid-outer-padding;
+    }
+    @media screen and (max-width: 800px) {
+      padding-right: $grid-outer-padding-mobile;
+    }
+  }
+}
+
+.container-breakout-left,.container-breakout-right {
+  width: 50vw;
+}
+
+.container-breakout-left {
+  padding-right:.5 * $grid-gutter-width;
+}
+
+.container-breakout-right {
+  padding-left:.5 * $grid-gutter-width;
+  margin-left:-.5 * $grid-gutter-width;
+}
+
+@mixin breakout-fix {
+  position:relative;
+  right:-#{math.div($grid-gutter-width,2)};
+}
+
+@mixin breakout-cancel {
+  width:100%;
+  max-width: $container-with-padding;
+  position: relative;
+  padding-left: $grid-outer-padding;
+  padding-right: $grid-outer-padding;
+  margin-left:auto;
+  margin-right:auto;
+  @media screen and (max-width: 800px) {
+    padding-left: $grid-outer-padding-mobile;
+    padding-right: $grid-outer-padding-mobile;
+  }
+}
+
+.has-container-padding-left {
+  padding-left: $grid-outer-padding;
+  @media screen and (min-width: $container-with-padding) {
+    padding-left: $container-padding;
+  }
+  @media screen and (max-width: 800px) {
+    padding-left: $grid-outer-padding-mobile;
+  }
+}
+
+.has-container-padding-right {
+  padding-right: $grid-outer-padding;
+  @media screen and (min-width: $container-with-padding) {
+    padding-right: $container-padding;
+  }
+  @media screen and (max-width: 800px) {
+    padding-right: $grid-outer-padding-mobile;
+  }
+}

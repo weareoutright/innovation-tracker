@@ -1,0 +1,87 @@
+.component {
+  position:relative;
+  &.component-contrast {
+    @include typeContrast;
+    a {
+      @include typeLinkContrast;
+    }
+    h1,h2,h3,h4,h5,h6 {
+      @include typeHeaderContrast;
+    }
+  }
+  &.component-dark {
+    background:$dark;
+  }
+  &.component-darkest {
+    background:$darkest;
+  }
+  &.component-gradient-violet {
+    background: transparent linear-gradient(360deg, $navy 0%, $violet 100%) 0% 0% no-repeat padding-box;
+  }
+  &.component-gradient-navy {
+    background: transparent linear-gradient(180deg, $navy 0%, $violet 100%) 0% 0% no-repeat padding-box;
+  }
+  &.component-gradient-blue {
+    background: transparent linear-gradient(90deg, $navy 0%, $blueLight 50%, $teal 100%) 0% 0% no-repeat padding-box;
+  }
+  &.component-edge {
+    position:relative;
+    &:after {
+      content:"";
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:100%;
+      height:em(110);
+      pointer-events:none;
+      z-index:2;
+      background:transparent url("#{$themePath}/images/block-edge.svg") bottom center no-repeat;
+      background-size:auto 100%;
+    }
+  }
+  &.component-edge-top {
+    &:before {
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:em(110);
+      pointer-events:none;
+      z-index:2;
+      background:transparent url("#{$themePath}/images/block-edge.svg") top center no-repeat;
+      background-size:auto 100%;
+      transform:scaleY(-1);
+    }
+  }
+  &.component-edge-reverse {
+    &:after {
+      transform:scaleX(-1);
+    }
+  }
+  &.component-edge-top-reverse {
+    &:before {
+      transform:scaleX(-1) scaleY(-1);
+    }
+  }
+  &.component-edge-white {
+    &:after {
+      background-image:url("#{$themePath}/images/block-edge-white.svg");
+    }
+  }
+  &.component-edge-top-white {
+    &:before {
+      background-image:url("#{$themePath}/images/block-edge-white.svg");
+    }
+  }
+  &.component-edge-violet {
+    &:after {
+      background-image:url("#{$themePath}/images/block-edge-violet.svg");
+    }
+  }
+  &.component-edge-top-violet {
+    &:before {
+      background-image:url("#{$themePath}/images/block-edge-violet.svg");
+    }
+  }
+}

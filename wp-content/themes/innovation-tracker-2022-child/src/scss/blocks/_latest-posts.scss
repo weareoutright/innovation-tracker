@@ -1,0 +1,13 @@
+.component-latest-posts {
+  background:$light;
+  padding:em(158) 0 em(156);
+  h2 {
+    margin-top:0;
+  }
+  .latest_posts__headline,.latest_posts__description {
+    text-align:center;
+  }
+  .latest_posts__description {
+    margin-bottom:em(60) !important;
+  }
+}

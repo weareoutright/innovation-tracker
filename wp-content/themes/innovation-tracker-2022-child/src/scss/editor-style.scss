@@ -1,0 +1,79 @@
+@import "style";
+
+.block-editor .editor-styles-wrapper {
+  padding: 0;
+}
+
+.block-editor-writing-flow {
+  > .is-root-container {
+    @extend .container;
+  }
+
+  .wp-block {
+    max-width: 100%;
+    margin: 0;
+    &.wp-block-paragraph {
+      margin-bottom:2em;
+    }
+    ul,
+    ol {
+      &.list-unstyled {
+        list-style: none;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+      }
+      &.row {
+        margin-left: -15px;
+        margin-right: -15px;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    .fa,
+    .fas,
+    .fab {
+      &,
+      &:before {
+        //@include typeIcon;
+      }
+    }
+    .acf-block-body {
+      font-size: 14px;
+      .acf-block-preview {
+        > .component {
+          width: calc(100% + 2 * $grid-outer-padding);
+          margin-left: -1 * $grid-outer-padding;
+        }
+      }
+    }
+    .acf-block-fields {
+      max-width: #{$container-max - $grid-gutter-width};
+      margin: 0 auto;
+    }
+  }
+  .edit-post-visual-editor__post-title-wrapper {
+    //@extend .hp-section-hero;
+    .editor-post-title {
+      max-width: $container-max;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin: 0 auto;
+    }
+    .editor-post-title__input {
+      max-width: 59.5%;
+      padding: 0;
+    }
+  }
+}
+
+//Sidebar
+.edit-post-meta-boxes-area {
+  #poststuff {
+    h1,h2,h3,h4,h5,h6 {
+      @include typeDefault;
+      font-weight:normal;
+      line-height:1.2em;
+    }
+  }
+}

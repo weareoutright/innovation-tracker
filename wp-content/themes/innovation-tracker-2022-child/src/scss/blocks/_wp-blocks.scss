@@ -1,0 +1,29 @@
+.post__content {
+  > .wp-block-group {
+    padding-top:em(92);
+    padding-bottom:em(111);
+    .wp-block-group {
+      .wp-block-group__inner-container {
+        max-width:none;
+        padding-left:0;
+        padding-right:0;
+      }
+    }
+    + .wp-block-group {
+      &:nth-child(even) {
+        background:$light;
+      }
+    }
+    > .wp-block-group__inner-container {
+      > h2 {
+        &:first-child {
+          margin-top:0;
+        }
+      }
+    }
+    .wp-block-group__inner-container {
+      @extend .container;
+    }
+
+  }
+}

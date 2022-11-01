@@ -1,0 +1,14 @@
+.component-updates {
+  padding:em(111) 0 em(168);
+  .updates__content {
+    text-align:center;
+    h2 {
+      @include typeHeaderLarge;
+      @include typeHeaderContrast;
+      margin-bottom:1em;
+    }
+    .btn {
+      @extend .btn-large;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+$light: #ffffff;
+$dark: #4A3C31;
+$darkest: #000000;
+
+$navy:#253D86;
+$teal:#6FC7B2;
+$lime:#C8DA2C;
+$green:#00985F;
+$cyan:#029EDA;
+$cream:#F7F6F1;
+$gray:#D8D5D3;
+$violet:#9C5FB5;
+$blue:#335AFF;
+$blueLight:#1C8DD3;
+$orange:#335AFF;
+$yellow:#335AFF;
+$red:#335AFF;
+$forest:#1D5C42;
+
+$card-shadow: 2px 5px 6px $gray;
+$card-shadow-active: 4px 10px 12px $gray;
+
+@mixin materialShadow($hover: false) {
+  box-shadow: $card-shadow;
+  @if $hover {
+    &:hover {
+      box-shadow: $card-shadow-active;
+    }
+  }
+}

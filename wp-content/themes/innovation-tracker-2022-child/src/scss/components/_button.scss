@@ -1,0 +1,60 @@
+.btn {
+  border-radius:2em;
+  border:1px solid $navy;
+  padding:.5em 1.2em;
+  font-weight:900;
+  transition:all .5s ease;
+  background:$navy;
+  color:$light;
+  &:hover {
+
+  }
+  &.btn-trans {
+    background:transparent;
+    color:$navy;
+    &:hover {
+      background:$navy;
+      color:$light;
+    }
+  }
+  &.btn-contrast {
+    background:$light;
+    color:$darkest;
+    border-color:$light;
+    &:hover {
+      background:$navy;
+      color:$light;
+      border-color:$navy;
+    }
+    &.btn-trans {
+      background:transparent;
+      color:$light;
+      &:hover {
+        background:$light;
+        color:$darkest;
+      }
+    }
+  }
+  &.btn-large {
+    @include typeLarge;
+  }
+}
+
+.component-contrast {
+  a.btn-contrast {
+    color:$darkest;
+  }
+  a.btn,a.btn-trans {
+    @extend .btn-contrast;
+  }
+}
+
+.wp-block-button__link:not(.has-text-color) {
+  @extend .btn;
+  .is-style-outline > &, &.is-style-outline {
+    @extend .btn-trans;
+  }
+  .component-contrast & {
+    @extend .btn-contrast;
+  }
+}

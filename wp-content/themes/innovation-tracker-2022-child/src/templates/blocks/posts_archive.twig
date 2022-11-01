@@ -1,0 +1,24 @@
+{% set classes = [
+    'component',
+    'component-posts-archive',
+
+  ]
+%}
+
+<div class="{{ classes|join(' ') }}">
+  <div class="archive__content">
+    <div class="container">
+      <div class="row">
+        <div class="archive__posts">
+          <div class="row">
+            {% for post in posts %}
+              <div class="col-12 col-md-4">
+                {% include 'post-preview.twig' with {post:post,classes:[]} %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

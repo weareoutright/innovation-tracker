@@ -1,0 +1,23 @@
+.nav-jump {
+  margin-bottom:em(138);
+  margin-top:em(-80);
+  strong {
+    @include typeHeaderBody;
+  }
+  .wp-block-button__link {
+    @extend .btn, .btn-trans;
+  }
+  &.sticky {
+    @extend .component,.component-contrast,.component-darkest;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    margin:0;
+    z-index:99999;
+    .wp-block-buttons {
+      padding-top:em(12);
+      padding-bottom:em(12);
+    }
+  }
+}

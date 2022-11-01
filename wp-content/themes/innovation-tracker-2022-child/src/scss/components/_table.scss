@@ -1,0 +1,50 @@
+.post__content {
+  table {
+    border:none;
+    border-collapse:collapse;
+    margin-top:1em;
+    th {
+      @include typeHeaderTable;
+      &:first-child {
+        padding-left:0;
+      }
+    }
+    thead {
+      border:none;
+      tr {
+        border:none;
+      }
+      th,td {
+        border:none;
+        vertical-align:bottom;
+      }
+    }
+    tbody {
+      border:none;
+      td,th {
+        &:first-child {
+          padding-left:0;
+          width:25%;
+        }
+        vertical-align:top;
+        border-style:1px solid $darkest;
+        border-width:0 0 1px 0;
+        padding:.75em;
+      }
+      td {
+        &:last-child {
+          border-right:none;
+        }
+        border-right:1px solid $darkest;
+      }
+      tr {
+        border:none;
+        &:first-child {
+          td,th {
+            border-top-width:1px;
+          }
+        }
+      }
+    }
+  }
+}

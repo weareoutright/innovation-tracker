@@ -1,0 +1,128 @@
+@font-face {
+  font-family: 'Basier Circle';
+  font-weight: 400;
+  src: url('fonts/basiercircle-regular-webfont.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Basier Circle';
+  font-weight: 600;
+  src: url('fonts/basiercircle-semibold-webfont.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Basier Circle';
+  font-weight: 900;
+  src: url('fonts/basiercircle-bold-webfont.woff2') format('woff2');
+}
+
+$typeBase: 16px;
+$fontBase: "Basier Circle", "Arial", sans-serif;
+
+@function em($px, $base: 16) {
+  @return math.div($px,$base) * 1em;
+}
+
+@mixin typeDefault {
+  color: $dark;
+  font-family: $fontBase;
+  font-size: $typeBase;
+  font-weight: 400;
+  line-height: 1.25em;
+  text-transform: none;
+}
+
+@mixin typeLarge {
+  font-size:em(24);
+  line-height:1.25em;
+  font-weight:600;
+}
+
+@mixin typeLarger {
+  font-size:em(30);
+  line-height:1.3333em;
+  font-weight:400; 
+}
+
+@mixin typeContrast {
+  color: $light;
+}
+
+@mixin typeLink {
+  font-size:inherit;
+  font-weight:inherit;
+  color:$blue;
+  text-decoration:underline;
+  &:hover,&:active {
+    color: $navy;
+  }
+}
+
+@mixin typeLinkContrast {
+  color:$light;
+  &:hover,&:active {
+    color: $cream;
+  }
+}
+
+@mixin typeLinkNoUnderline {
+  &,&:hover,&:active,&:focus,&:visited {
+    text-decoration:none;
+  }
+}
+
+@mixin typeLinkUnderlineOnHover {
+  text-decoration:none;
+  &:hover,&:active,&:focus,&:visited {
+    text-decoration:underline;
+  }
+}
+
+@mixin typeNavLink {
+  @include typeLink;
+  @include typeLinkContrast;
+  @include typeLinkNoUnderline;
+}
+
+@mixin typeHeader {
+  @include typeDefault;
+  color:$navy;
+  font-weight:900;
+}
+
+@mixin typeHeaderContrast {
+  color: $light;
+}
+
+@mixin typeHeaderSuper {
+  @include typeHeader;
+  font-size: em(70);
+  line-height:1em;
+  margin:0 0 .5em;
+}
+
+@mixin typeHeaderLarge {
+  @include typeHeader;
+  font-size: em(60);
+  line-height:1em;
+  margin:0 0 .23em;
+}
+
+@mixin typeHeaderBody {
+  @include typeHeader;
+  font-size: em(40);
+  line-height:1.25em;
+  margin: em(111,40) 0 em(33,40);
+}
+
+@mixin typeHeaderReduced {
+  @include typeHeader;
+  color:$darkest;
+  font-size: em(30);
+  line-height:1.25em;
+  margin: em(111,30) 0 .5em;
+}
+
+@mixin typeHeaderTable {
+  text-transform:uppercase;
+  font-weight:900;
+  font-size:em(15);
+}

@@ -1,0 +1,39 @@
+.navbar-site {
+  margin:0;
+  padding:0;
+  .navbar-primary {
+    width:100%;
+  }
+}
+
+%nav-link-active {
+  font-weight:bold;
+  border-bottom-width:em(7);
+}
+
+.nav-site {
+  justify-content:space-between;
+  .nav-item {
+    &.current_page_item {
+      .nav-link {
+        @extend %nav-link-active;
+      }
+    }
+  }
+  .nav-link {
+    @include typeNavLink;
+    padding:0 em(28) !important;
+    width:em(161);
+    height:em(96);
+    text-align:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-bottom:0 solid $light;
+    position:relative;
+    transition:all .25s ease;
+    &:hover {
+      @extend %nav-link-active;
+    }
+  }
+}

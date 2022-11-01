@@ -1,0 +1,36 @@
+{% set classes = [
+    'component',
+    'component-tracker-prompts',
+    'component-contrast',
+    'component-gradient-navy',
+    'component-edge-top',
+    'component-edge-top-reverse',
+    'component-edge-top-white'
+  ]
+%}
+
+<div class="{{ classes|join(' ') }}">
+  <div class="tracker-prompts__content">
+    <div class="container">
+      <div class="row">
+        <div class="tracker-prompts__intro">
+          <div class="col-12">
+            <h2 class="tracker-prompts__headline">{{ fields.headline }}</h2>
+          </div>
+        </div>
+        <div class="tracker-prompts__prompts">
+          {% for prompt in fields.prompts %}
+            <div class="tracker-prompts__prompt">
+              <div class="prompt__prompt">
+                {{ prompt.prompt }}
+              </div>
+              <div class="prompt__question">
+               <a class="btn btn-contrast btn-trans btn-large" href="{{ prompt.url }}">{{ prompt.question }}</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

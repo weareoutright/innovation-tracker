@@ -1,0 +1,12 @@
+{% for item in nav.get_items %}
+  {% set key = item.post_title ? item.post_title|lower|replace({" ":"_"}) : item.title|lower|replace({" ":"_"}) %}
+  <li class="nav-item nav__menu-item nav__menu__item-{{key}} {{ item.classes|join(' ') }}">
+      <a class="nav-link nav__menu-link {{ item.current ? 'active' : '' }}" href="{{ item.link }}">
+        <span>
+          {{ item.title }}
+        </span>
+      </a>
+  </li>
+{% endfor %}
+
+  

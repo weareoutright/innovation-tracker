@@ -1,0 +1,23 @@
+{% extends 'base.twig' %}
+
+{% set post = page ? page : post %}
+
+{% block above_content %}
+      {% include 'hero_with_cta.twig' with {
+          fields:{
+              headline: post.title,
+              description: post.post_excerpt,
+              hero_image: (post.thumbnail ? post.thumbnail.src : null)
+          }
+      }%}
+{% endblock %}
+
+{% block content %}
+    <div class="post__content__wrapper">
+        <div class="post__section post__section-main">
+            <div class="post__content">
+                {{ post.content }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

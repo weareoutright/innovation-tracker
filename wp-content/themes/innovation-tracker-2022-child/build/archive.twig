@@ -1,0 +1,32 @@
+{% extends 'base.twig' %}
+
+{% block above_content %}
+  {% include 'hero_with_cta.twig' with {
+      fields:{
+          headline: page.title,
+          description: page.post_excerpt is empty ? page.content : page.post_excerpt,
+          hero_image: page.thumbnail ? page.thumbnail.src : null
+      }
+  }%}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="archive__content">
+    <div class="container">
+      <div class="row">
+        {% for post in posts %}
+          <div class="col-12 col-md-4">
+            {% include 'post_preview.twig' with {post:post,els:{header:"h3"},classes:['card-default']} %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block below_content %}
+  {% if block_global_email %}{{ function('apply_filters','the_content','<!-- wp:block {"ref":' ~ block_global_email.ID ~ '} /-->') }}{% endif %}
+{% endblock %}
+

@@ -1,0 +1,30 @@
+{% set classes = [
+    'component',
+    'component-latest-posts',
+
+  ]
+%}
+
+<div class="{{ classes|join(' ') }}">
+  <div class="latest_posts__content">
+    <div class="container">
+      <div class="row">
+        <div class="latest_posts__intro">
+          <div class="col-12">
+            <h2 class="latest_posts__headline">{{ fields.headline }}</h2>
+            <p class="latest_posts__description">{{ fields.description }}</p>
+          </div>
+        </div>
+        <div class="latest_posts__posts">
+          <div class="row">
+            {% for post in latest_posts %}
+              <div class="col-12 col-md-4">
+                {% include 'post-preview.twig' with {post:post,classes:[]} %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

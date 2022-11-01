@@ -1,0 +1,57 @@
+{% set card_classes = [
+    'post__preview',
+    'card',
+    (post.post_type ? 'post__preview-'~post.post_type : ''),
+    date().diff(date(post.date)).days <= 14 ? 'post-new' : '',
+  ]|merge(classes is not empty ? classes : [])
+%}
+
+{% set els = {
+    header: (els and els.header ? els.header : 'h3')
+  }
+%}
+
+{% set post_link = post.link ? post.link : post.path %}
+
+{% set post_title %}
+  <{{ els.header ? els.header : h3 }} class="post__title">{{ post.title ? post.title : post.post_title }}</{{ els.header ? els.header : h3 }}>
+{% endset %}
+
+{% set post_image = post.thumbnail ? post.thumbnail.src : null %}
+
+{% set post_date %}
+    {% if date_format is not defined %}
+        {% set date_format = 'j M Y' %}
+    {% endif %}
+    <div class="post-preview__date">
+        {% if date().diff(date(post.date)).days > 2 %}      
+            {{ post.date|date(date_format) }}
+        {% else %}
+            {{ post.date|time_ago }}
+        {% endif %}
+    </div>
+{% endset %}
+
+<article class="{{ card_classes|join(' ') }}">
+  <div class="card__wrapper">
+    {% block content %}
+      <div class="card__section card__image">
+        <div class="card__section__inner">
+          <a href="{{ post_link }}">{% if post_image %}<div class="post__image" style="background-image:url({{ post_image }})"></div>{% endif %}</a>
+        </div>
+      </div>
+      <div class="card__content__wrapper">
+        <div class="card__section card__content">
+          <a href="{{ post_link }}">
+            <div class="card__section__inner">
+              <div class="post__meta">
+                {{ post_date }}
+              </div>
+              {{ post_title }}
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endblock %}
+  </div>
+</article>

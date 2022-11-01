@@ -1,0 +1,47 @@
+{% extends 'base-single.twig' %}
+
+{% set post_date %}
+    {% if date_format is not defined %}
+        {% set date_format = 'j M Y' %}
+    {% endif %}
+    <div class="post-preview__date">
+        {% if date().diff(date(post.date)).days > 2 %}      
+            {{ post.date|date(date_format) }}
+        {% else %}
+            {{ post.date|time_ago }}
+        {% endif %}
+    </div>
+{% endset %}
+
+{% block above_content %}
+  {% include 'hero_with_cta.twig' with {
+    fields:{
+      headline: post.title,
+      description: post.post_excerpt,
+      meta: post_date,
+      hero_image: (post.thumbnail ? post.thumbnail.src : null)
+    }
+  }%}
+{% endblock %}
+
+{% block content %}
+  <div class="post__content__wrapper">
+    <div class="post__section post__section-main">
+      <div class="post__content">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              {{ post.content }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block below_content %}
+  <div class="container">
+    {% if block_back_to_top %}{{ function('apply_filters','the_content','<!-- wp:block {"ref":' ~ block_back_to_top.ID ~ '} /-->') }}{% endif %}
+  </div>
+{% endblock %}

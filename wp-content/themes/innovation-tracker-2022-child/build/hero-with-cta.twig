@@ -1,0 +1,34 @@
+{% set classes = [
+    'component',
+    'component-contrast',
+    'component-hero-with-cta',
+    fields.class ? fields.class : '',
+    fields.interior ? 'hero-interior' : '',
+    fields.reduced ? 'hero-reduced' : ''
+  ]
+%}
+{% set is_interior = fields.interior %}
+
+<header class="{{ classes|join(' ') }}" style="{{ fields.hero_image ? 'background-image:url(' ~ fields.hero_image ~ ')' : '' }}">
+  {% if fields.hero_image %}
+    <div class="bg-screen bg-screen-top"></div>
+    <div class="bg-screen bg-screen-bottom"></div>
+  {% endif %}
+  <div class="hero__content">
+    <div class="container">
+      <div class="hero__content__inner">
+        {#{% include 'nav-breadcrumbs.twig' with {breadcrumbs:fields.breadcrumbs} %}#}
+        <h1 class="hero__headline">
+          {% if fields.pre_headline %}<span class="hero__pre-headline">{{ fields.pre_headline }}</span>{% endif %}
+          {% if fields.cta and not is_interior %}<a class="hero__headline__link" href="{{ fields.cta_link }}" target="_blank">{% endif %}
+            {{ fields.headline }}
+          {% if fields.cta and not is_interior %}</a>{% endif %}
+          {% if fields.post_headline %}<span class="hero__post-headline">{{ fields.post_headline }}</span>{% endif %}
+        </h1>
+        {% if fields.meta %}<div class="hero__meta">{{ fields.meta }}</div>{% endif %}
+        {% if fields.description %}<div class="hero__description">{{ fields.description }}</div>{% endif %}
+        {% if fields.cta %}<a class="btn btn-trans btn-contrast btn-large hero__cta" href="{{ fields.cta_link }}" target="_blank">{{ fields.cta }}</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</header>

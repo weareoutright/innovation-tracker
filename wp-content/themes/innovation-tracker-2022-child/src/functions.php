@@ -109,7 +109,7 @@ class InnovationTracker extends Timber\Site {
 
   public function innovationtracker_enqueue_scripts() {
     wp_enqueue_script('jquery');
-    wp_enqueue_script('bootstrap-bundle-script', get_stylesheet_directory_uri() . '/../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', array(), null, true);
+    wp_enqueue_script('bootstrap-bundle-script', get_stylesheet_directory_uri() . '/js/lib/bootstrap.bundle.min.js', array(), null, true);
   }
 
   public function innovationtracker_enqueue_styles() {

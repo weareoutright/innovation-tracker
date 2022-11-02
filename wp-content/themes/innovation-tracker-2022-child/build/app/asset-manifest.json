@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/wp-content/themes/innovation-tracker-2022-child/build/app/build/static/css/main.5c95416c.css",
-    "main.js": "/wp-content/themes/innovation-tracker-2022-child/build/app/build/static/js/main.08d8fb88.js",
-    "index.html": "/wp-content/themes/innovation-tracker-2022-child/build/app/build/index.html",
-    "main.5c95416c.css.map": "/wp-content/themes/innovation-tracker-2022-child/build/app/build/static/css/main.5c95416c.css.map",
-    "main.08d8fb88.js.map": "/wp-content/themes/innovation-tracker-2022-child/build/app/build/static/js/main.08d8fb88.js.map"
+    "main.css": "./static/css/main.df6b1226.css",
+    "main.js": "./static/js/main.9da7a8af.js",
+    "index.html": "./index.html",
+    "main.df6b1226.css.map": "./static/css/main.df6b1226.css.map",
+    "main.9da7a8af.js.map": "./static/js/main.9da7a8af.js.map"
   },
   "entrypoints": [
-    "static/css/main.5c95416c.css",
-    "static/js/main.08d8fb88.js"
+    "static/css/main.df6b1226.css",
+    "static/js/main.9da7a8af.js"
   ]
 }

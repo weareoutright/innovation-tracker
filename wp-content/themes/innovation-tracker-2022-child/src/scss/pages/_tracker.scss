@@ -2,4 +2,7 @@
   #block-footeredf2020 {
     display:none;
   }
+  .navbar-site {
+    @extend %navbar-with-trigger;
+  }
 }

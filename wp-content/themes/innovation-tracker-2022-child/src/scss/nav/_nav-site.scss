@@ -4,7 +4,60 @@
   .navbar-primary {
     width:100%;
   }
+  .navbar-toggler__wrapper {
+    position: absolute;
+    top: 100%;
+    right: 0;
+  }
+  .navbar-toggler {
+    color: $light;
+    background:$darkest;
+    border:none;
+    border-radius:0;
+    outline:none;
+    padding:em(11) em(11) em(10);
+    font-size:1em;
+    line-height:1em;
+    font-weight:900;
+    box-shadow:none;
+    i {
+      font-size: 1.4em;
+      vertical-align: middle;
+    }
+    &:focus {
+      outline:none;
+    }
+  }
 }
+
+%navbar-with-trigger {
+  .navbar-toggler__wrapper {
+    &:hover {
+      + .navbar-collapse:not(.show) {
+        max-height:8px;
+      }
+    }
+  }
+  .navbar-toggler {
+    display:block;
+  }
+  .navbar-collapse {
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .5s ease;
+    .nav-link {
+      opacity:0;
+      transition:opacity .5s ease;
+    }
+    &.show {
+      max-height:em(96);
+      .nav-link {
+        opacity:1;
+      }
+    }
+  }
+}
+
 
 %nav-link-active {
   font-weight:bold;

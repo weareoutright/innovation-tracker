@@ -16,12 +16,27 @@
 			wp_enqueue_script( 'nav-jump', get_stylesheet_directory_uri() . '/js/nav-jump.js', array(), null, true );
 		}
 
-		Timber::render([
-			'archive-' . $context['page']->slug . '.twig',
-			'page-' . $context['page']->slug . '.twig',
-			'page.twig',
-			'base-single.twig',
-			'base.twig'
-		], $context);
+		if ($context['page']->slug === 'tracker') {
+			$app_manifest = file_get_contents(get_stylesheet_directory_uri() . '/app/asset-manifest.json');
+			$app_assets = json_decode($app_manifest);
+			foreach ($app_assets->entrypoints as $asset) {
+				$parts = explode('.',$asset);
+  			$extension = end($parts);
+  			if ($extension === 'js') {
+  				wp_enqueue_script( 'tracker', get_stylesheet_directory_uri() . '/app/' . $asset, array(), null, true );
+  			} else if ($extension === 'css') {
+  				wp_enqueue_style( 'tracker', get_stylesheet_directory_uri() . '/app/' . $asset, array(), null);
+  			}
+			}
+			Timber::render(['tracker.twig'], $context);
+		} else {
+			Timber::render([
+				'archive-' . $context['page']->slug . '.twig',
+				'page-' . $context['page']->slug . '.twig',
+				'page.twig',
+				'base-single.twig',
+				'base.twig'
+			], $context);
+		}
 	}
 ?>

@@ -32,20 +32,33 @@ if (file_exists(dirname(__FILE__) . '/wp-config-pantheon.php') && isset($_ENV['P
  * If you are only running on Pantheon, you can ignore this block.
  */
 } else {
-	define('DB_NAME',          'database_name');
-	define('DB_USER',          'database_username');
-	define('DB_PASSWORD',      'database_password');
-	define('DB_HOST',          'database_host');
-	define('DB_CHARSET',       'utf8');
-	define('DB_COLLATE',       '');
-	define('AUTH_KEY',         'put your unique phrase here');
-	define('SECURE_AUTH_KEY',  'put your unique phrase here');
-	define('LOGGED_IN_KEY',    'put your unique phrase here');
-	define('NONCE_KEY',        'put your unique phrase here');
-	define('AUTH_SALT',        'put your unique phrase here');
-	define('SECURE_AUTH_SALT', 'put your unique phrase here');
-	define('LOGGED_IN_SALT',   'put your unique phrase here');
-	define('NONCE_SALT',       'put your unique phrase here');
+  // ** Database settings - You can get this info from your web host ** //
+  /** The name of the database for WordPress */
+  define( 'DB_NAME', 'innovationtracker' );
+
+  /** Database username */
+  define( 'DB_USER', 'mysqluser' );
+
+  /** Database password */
+  define( 'DB_PASSWORD', 'tim$SPW4MS' );
+
+  /** Database hostname */
+  define( 'DB_HOST', 'localhost' );
+
+  /** Database charset to use in creating database tables. */
+  define( 'DB_CHARSET', 'utf8' );
+
+  /** The database collate type. Don't change this if in doubt. */
+  define( 'DB_COLLATE', '' );
+
+  define('AUTH_KEY',         'f5$VCeIJQIPtAAh`hiYJ_bxMBC #dE72LeU5 f]|+6V,IXnVlj2$5l5;}*h=Y#gn');
+  define('SECURE_AUTH_KEY',  '|wy$a}7s<7Q)h*,HY2Jy}+%ka)%+>+:r-?s:&Q|,6gYY:o5|5Mz?4Y-CuXlmg9r0');
+  define('LOGGED_IN_KEY',    '.&}usqYALfY&-73MhoNNEv=O| dLf:N;M:!GRqeoi.pPr(v4HP+H^w+5Kw-(6WQF');
+  define('NONCE_KEY',        'aJnlw0?a&L|%f3ZIyihTCP79KiZtic-<,j`K%|U2-z#x1,1c}2zHVf2!fqxiJze(');
+  define('AUTH_SALT',        'C&UabYe/v$<gkv$V#KCdtVbaCIrSJe|z^o$jLDbzQZv$1gETGm[cG(sNYXe{&6Q)');
+  define('SECURE_AUTH_SALT', '~9bgV)5]iy]U,5S&{Jd+y|/dbKWuRp8{qYBsPZz#@Y$PmCbq9D|2&x7]?|Cwn>x`');
+  define('LOGGED_IN_SALT',   'ZJA`dfV1r2(KKDTcK~2~g&n]JR{_kL:HP3yRZAp#o5{l*)!>}bOuH<IB:6yu0Vm[');
+  define('NONCE_SALT',       'b`(gPeT<-@7o#ZJq||4?r,JA8>|j;`!pia^U2Hr-WGpFJjm$J2hrNe(**4$.,Q;J');
 }
 
 
@@ -70,7 +83,7 @@ $table_prefix = 'wp_';
  * "true" in dev, but false in test and live.
  */
 if ( ! defined( 'WP_DEBUG' ) ) {
-	define( 'WP_DEBUG', true );
+  define( 'WP_DEBUG', true );
   define( 'WP_DEBUG_LOG', true );
   define( 'WP_DEBUG_DISPLAY', true );
   define( 'WP_CACHE', false );

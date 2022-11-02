@@ -78,6 +78,14 @@ gulp.task("theme-php", async () => {
     .pipe(gulp.dest(config.theme.php.dest));
 });
 
+// Copy Tracker app source files to the `build` folder
+gulp.task("theme-app", async () => {
+  return gulp
+    .src(config.theme.app.src)
+    .pipe(plugins.changed(config.theme.app.dest))
+    .pipe(gulp.dest(config.theme.app.dest));
+});
+
 // Copy Twig source files to the 'build/templates' folder
 gulp.task("theme-twig", async () => {
   return gulp
@@ -96,7 +104,7 @@ gulp.task("theme-fonts", async () => {
 });
 
 // All the theme tasks in one
-gulp.task("theme", gulp.series("theme-php", "theme-twig", "theme-fonts"));
+gulp.task("theme", gulp.series("theme-php", "theme-app", "theme-twig", "theme-fonts"));
 
 // Build a working copy of the theme
 gulp.task("build", gulp.series("images", "scripts", "styles", "theme"));

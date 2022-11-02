@@ -78,7 +78,7 @@ module.exports = {
       dest: build,
     },
     fonts: {
-      src: src + "**/*(*.eot|*.svg|*.ttf|*.woff)",
+      src: src + "**/*(*.eot|*.svg|*.ttf|*.woff|*.woff2)",
       dest: build,
     },
   },
@@ -109,9 +109,12 @@ module.exports = {
         src + "*.php",
         src + "**/*.php",
         src + "**/**/*.php",
+        src + "app/build/*",
+        src + "app/build/**/*",
+        src + "app/build/**/**/*"
       ],
       livereload: build + "**/*",
-      fonts: src + "**/*(*.eot|*.svg|*.ttf|*.woff)",
+      fonts: src + "**/*(*.eot|*.svg|*.ttf|*.woff|*.woff2)",
     },
   },
 };

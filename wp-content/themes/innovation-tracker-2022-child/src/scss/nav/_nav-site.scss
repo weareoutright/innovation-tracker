@@ -44,10 +44,10 @@
   .navbar-collapse {
     max-height:0;
     overflow:hidden;
-    transition:max-height .5s ease;
+    transition:max-height .33s ease;
     .nav-link {
       opacity:0;
-      transition:opacity .5s ease;
+      transition:opacity .33s ease;
     }
     &.show {
       max-height:em(96);

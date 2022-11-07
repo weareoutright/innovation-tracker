@@ -31,12 +31,14 @@
       color:$light;
       &:hover {
         background:$light;
-        color:$darkest;
+        color:$navy;
+        border-color:$light;
       }
     }
   }
   &.btn-large {
     @include typeLarge;
+    font-weight:900;
   }
 }
 

@@ -45,19 +45,6 @@ Timber::$dirname = array( 'templates', 'views' );
  */
 Timber::$autoescape = false;
 
-// Define path and URL to the ACF plugin.
-define( 'INNOVATIONTRACKER_ACF_PATH', get_stylesheet_directory() . '/plugins/advanced-custom-fields-pro/' );
-define( 'INNOVATIONTRACKER_ACF_URL', get_stylesheet_directory_uri() . '/plugins/advanced-custom-fields-pro/' );
-
-// Include the ACF plugin.
-include_once( INNOVATIONTRACKER_ACF_PATH . 'acf.php' );
-
-// Customize the url setting to fix incorrect asset URLs.
-add_filter('acf/settings/url', 'innovationtracker_acf_settings_url');
-function innovationtracker_acf_settings_url( $url ) {
-    return INNOVATIONTRACKER_ACF_URL;
-}
-
 
 //Include custom block functionality
 require_once('inc/blocks.php');

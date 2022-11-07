@@ -1,7 +1,8 @@
 .block-back-to-top {
-  background:$cream !important;
-  padding-top:em(75) !important;
-  padding-bottom:em(75) !important;
+  background:transparent !important;
+  padding-top:0!important;
+  padding-bottom:0!important;
+  margin-top:em(-42);
   .wp-block-group__inner-container {
     text-align:right;
     a {

@@ -36,7 +36,7 @@
       pointer-events:none;
       z-index:2;
       background:transparent url("#{$themePath}/images/block-edge.svg") bottom center no-repeat;
-      background-size:auto 100%;
+      background-size:auto 100.5%;
     }
   }
   &.component-edge-top {
@@ -50,7 +50,7 @@
       pointer-events:none;
       z-index:2;
       background:transparent url("#{$themePath}/images/block-edge.svg") top center no-repeat;
-      background-size:auto 100%;
+      background-size:auto 100.5%;
       transform:scaleY(-1);
     }
   }

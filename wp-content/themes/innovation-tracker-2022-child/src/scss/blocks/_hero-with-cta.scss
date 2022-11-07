@@ -13,7 +13,7 @@
     &.bg-screen-bottom {
       bottom:0;
       height:100%;
-      background: transparent linear-gradient(0deg, $darkest 0%, transparent 100%) 0% 0% no-repeat padding-box;
+      background: transparent linear-gradient(0deg, $darkest 60%, transparent) 0% 0% no-repeat padding-box;
     }
   }
   .hero__content {

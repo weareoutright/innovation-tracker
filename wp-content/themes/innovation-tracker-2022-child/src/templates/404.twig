@@ -1,22 +1,26 @@
 {% extends 'base-single.twig' %}
 
-{% block content %}
+{% block above_content %}
       {% include 'hero_with_cta.twig' with {
           fields:{
-              headline: 'Page Not Found',
-              interior: true
+              headline: "Page not found"
           }
       }%}
+{% endblock %}
+
+{% block content %}
     <div class="post__content__wrapper">
         <div class="post__section post__section-main">
+          <div class="post__content">
             <div class="container">
-                <div class="row">
-                    <div class="col-12 post__content">
-                        <h2>We're sorry!</h2>
-                        <p>That link doesn't appear to lead to a valid page. You can try again or visit our <a href="/">homepage</a> or <a href="/?s=">site search</a> to continue your visit.</p> 
-                    </div>
+              <div class="row">
+                <div class="col-12">
+                    <h2>We're sorry, either the page you're trying to reach is not available or you don't have permission to access it.</h2>
+                    <p><strong>Visit our <a href="/">homepage</a> or <a href="/tracker">explore the tracker</a>.</strong></p>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
     </div>
 {% endblock %}

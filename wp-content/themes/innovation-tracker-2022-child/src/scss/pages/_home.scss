@@ -8,7 +8,7 @@ body.home {
       margin:0 auto;
     }
     .hero__description,.hero__headline {
-      text-shadow:0px 3px 6px $dark;
+      text-shadow:0px 3px 12px $dark;
     }
     .hero__description {
       @include typeLarge;

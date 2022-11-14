@@ -1,14 +1,43 @@
 .single-post {
-  h1 {
-    @include typeHeaderLarge;
+  .component.component-hero-with-cta {
+    @extend .component-cream;
+    &:after {
+      content:none;
+    }  
+    color:$darkest;
+    padding:em(84) 0;
+    h1 {
+      @include typeHeaderLarge;
+      color:$darkest;
+      line-height:1.2em;
+    }
+    .hero__meta {
+      color:$grayMedium;
+      margin-top:1em;
+    }
   }
   .post__content {
     padding-top:em(92);
+    background:$light;
     .container > .row > .col-12 {
       max-width:800px;
     }
     p {
       margin-bottom:em(33);
+    }
+    h2 {
+      margin-bottom:1em;
+    }
+    h3 {
+      @include typeHeaderReduced;
+    }
+    h4 {
+      @include typeHeaderSmall;
+    }
+    h2, h3, h4 {
+      + h2, + h3, + h4 {
+        margin-top:0;
+      }
     }
   }
 }

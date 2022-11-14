@@ -9,6 +9,9 @@
       @include typeHeaderContrast;
     }
   }
+  &.component-cream {
+    background:$cream;
+  }
   &.component-dark {
     background:$dark;
   }

@@ -2,7 +2,7 @@
 
 {% set post_date %}
     {% if date_format is not defined %}
-        {% set date_format = 'M j, Y' %}
+        {% set date_format = 'F j, Y' %}
     {% endif %}
     <div class="post-preview__date">
         {% if date().diff(date(post.date)).days > 2 %}      

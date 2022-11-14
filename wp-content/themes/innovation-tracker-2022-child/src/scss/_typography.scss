@@ -136,12 +136,24 @@ $fontBase: "Basier Circle", "Arial", sans-serif;
   color:$darkest;
   font-size: em(30);
   line-height:1.25em;
-  margin: em(111,30) 0 .5em;
+  margin: em(111,30) 0 1em;
   @include media-breakpoint-down(md) {
     font-size: em(24);
   }
   @include media-breakpoint-down(sm) {
     font-size: em(18);
+  }
+}
+
+@mixin typeHeaderSmall {
+  @include typeHeader;
+  color:$grayMedium;
+  font-size: em(20);
+  line-height:1.5em;
+  text-transform:uppercase;
+  margin: 1em 0 1em;
+  @include media-breakpoint-down(md) {
+    font-size: em(16);
   }
 }
 

@@ -17,6 +17,12 @@ body.home {
       @extend .btn-large;
       box-shadow:0px 3px 6px $dark;
     }
+    @include media-breakpoint-down(lg) {
+      padding-top:em(79);
+    }
+    @include media-breakpoint-down(md) {
+      padding-top:em(72);
+    }
   }
   .component-updates {
      @extend .component-edge-top, .component-edge-top-reverse, .component-edge-top-violet;

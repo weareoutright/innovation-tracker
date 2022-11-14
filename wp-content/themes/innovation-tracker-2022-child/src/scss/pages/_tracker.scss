@@ -3,6 +3,6 @@
     display:none;
   }
   .navbar-site {
-    @extend %navbar-with-trigger;
+    @include navbar-with-trigger;
   }
 }

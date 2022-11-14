@@ -40,6 +40,9 @@
     @include typeLarge;
     font-weight:900;
   }
+  @include media-breakpoint-down(md) {
+    padding:.33em 1em;
+  }
 }
 
 .component-contrast {
@@ -60,3 +63,16 @@
     @extend .btn-contrast;
   }
 }
+
+.wp-block-button {
+  &,&.is-style-outline {
+    .wp-block-button__link {
+      padding:.5em 1.2em;
+      @include media-breakpoint-down(md) {
+        padding:.33em 1em;
+      }
+    }
+  } 
+}
+
+

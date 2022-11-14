@@ -18,7 +18,7 @@
         <div class="latest_posts__posts">
           <div class="row">
             {% for post in latest_posts %}
-              <div class="col-12 col-md-4">
+              <div class="col-12 col-lg-4">
                 {% include 'post-preview.twig' with {post:post,classes:[]} %}
               </div>
             {% endfor %}

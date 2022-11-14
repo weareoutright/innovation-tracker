@@ -23,4 +23,10 @@
   .hero__cta {
     margin-top:em(33);
   }
+  @include media-breakpoint-down(lg) {
+    padding:em(79) 0 em(196);
+  }
+  @include media-breakpoint-down(md) {
+    padding:em(72) 0 em(141);
+  }
 }

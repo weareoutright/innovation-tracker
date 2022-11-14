@@ -24,6 +24,9 @@
   &.component-gradient-blue {
     background: transparent linear-gradient(90deg, $navy 0%, $blueLight 50%, $teal 100%) 0% 0% no-repeat padding-box;
   }
+  &.component-gradient-lime-blue {
+    background: transparent linear-gradient(180deg, $lime 0%, $blueLight 100%) 0% 0% no-repeat padding-box;
+  }
   &.component-edge {
     position:relative;
     &:after {

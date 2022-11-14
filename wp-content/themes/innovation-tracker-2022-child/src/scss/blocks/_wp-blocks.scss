@@ -24,6 +24,9 @@
     .wp-block-group__inner-container {
       @extend .container;
     }
-
+    @include media-breakpoint-down(lg) {
+      padding-top:em(72);
+      padding-bottom:em(79);
+    }
   }
 }

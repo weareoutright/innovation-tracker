@@ -10,4 +10,10 @@
   .latest_posts__description {
     margin-bottom:em(60) !important;
   }
+  @include media-breakpoint-down(lg) {
+    padding:em(92) 0 em(121);
+  }
+  @include media-breakpoint-down(md) {
+    padding:em(72) 0 em(79);
+  }
 }

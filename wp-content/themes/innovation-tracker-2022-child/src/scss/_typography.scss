@@ -97,6 +97,12 @@ $fontBase: "Basier Circle", "Arial", sans-serif;
   font-size: em(70);
   line-height:1em;
   margin:0 0 .5em;
+  @include media-breakpoint-down(md) {
+    font-size: em(60);
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: em(50);
+  }
 }
 
 @mixin typeHeaderLarge {
@@ -104,6 +110,12 @@ $fontBase: "Basier Circle", "Arial", sans-serif;
   font-size: em(60);
   line-height:1em;
   margin:0 0 .23em;
+  @include media-breakpoint-down(md) {
+    font-size: em(50);
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: em(40);
+  }
 }
 
 @mixin typeHeaderBody {
@@ -111,6 +123,12 @@ $fontBase: "Basier Circle", "Arial", sans-serif;
   font-size: em(40);
   line-height:1.25em;
   margin: em(111,40) 0 em(33,40);
+  @include media-breakpoint-down(md) {
+    font-size: em(30);
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: em(20);
+  }
 }
 
 @mixin typeHeaderReduced {
@@ -119,6 +137,12 @@ $fontBase: "Basier Circle", "Arial", sans-serif;
   font-size: em(30);
   line-height:1.25em;
   margin: em(111,30) 0 .5em;
+  @include media-breakpoint-down(md) {
+    font-size: em(24);
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: em(18);
+  }
 }
 
 @mixin typeHeaderTable {

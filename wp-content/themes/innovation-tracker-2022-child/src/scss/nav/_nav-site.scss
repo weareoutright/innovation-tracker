@@ -55,8 +55,12 @@
 
 
 %nav-link-active {
-  font-weight:bold;
-  border-bottom-width:em(7);
+  &:after {
+    width:100%;
+  }
+  span {
+    font-weight:900;
+  }
 }
 
 .navbar-site {
@@ -123,9 +127,20 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    border-bottom:0 solid $light;
+    border-bottom:em(7) solid transparent;
     position:relative;
     transition:all .25s ease;
+    position:relative;
+    &:after {
+      content:"";
+      position:absolute;
+      height:em(7);
+      width:0;
+      background:$light;
+      transition:width .4s ease;
+      bottom:em(-7);
+      left:0;
+    }
     &:hover {
       @extend %nav-link-active;
     }
@@ -141,15 +156,15 @@
       &:nth-last-child(-n+2) {
         .nav-link {
           border-bottom-width:0;
-          &:hover {
-            border-bottom-width:em(7);
-          }
         }
       }
     }
     .nav-link {
       width:100%;
-      border-bottom-width:1px;
+      border-bottom:1px solid $light;
+      &:after {
+        bottom:-1px;
+      }
     }
   }
   @include media-breakpoint-down(sm) {
@@ -170,6 +185,9 @@
       text-align:left;
       justify-content:flex-start;
       border-bottom:1px solid $light !important;
+      &:after {
+        content:none;
+      }
       &:hover {
         border-left:em(7) solid $light;
       }

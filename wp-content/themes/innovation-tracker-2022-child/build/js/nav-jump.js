@@ -7,7 +7,7 @@
     let topTimeout;
     const $body = $('body');
     const $window = $(window);
-    const $buttons = target.find(".wp-block-buttons");
+    const $buttons = target.find(".wp-block-group__inner-container");
     const $clone = $buttons.clone();
     const $stickyWrapper = $("<div class='nav-jump sticky'>");
     const $container = $("<div class='container'></div>");

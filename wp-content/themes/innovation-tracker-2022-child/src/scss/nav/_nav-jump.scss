@@ -7,13 +7,18 @@
     margin-bottom:.5em;
     display:inline-block;
   }
-  .page .post__content & {
-    p {
-      margin:0;
-    }
+  .page .post__content & p, p {
+    margin:0;
   }
   .wp-block-button__link {
     @extend .btn, .btn-trans;
+    color:$navy !important;
+    border-color:$navy !important;
+    border-width:1px !important;
+    &:hover {
+      color:$light !important;
+      border-color:$navy !important;
+    }
   }
   &.sticky {
     @extend .component,.component-contrast,.component-darkest;
@@ -23,9 +28,25 @@
     width:100%;
     margin:0;
     z-index:99999;
+    strong {
+      @include typeDefault;
+      @include typeContrast;
+      font-size:.9em;
+      text-transform:uppercase;
+      font-weight:400;
+      margin:.6em 0 0;
+    }
     .wp-block-buttons {
       padding-top:em(12);
       padding-bottom:em(12);
+    }
+    .wp-block-button__link {
+      color:$light !important;
+      border-color:$light !important;
+      &:hover {
+        color:$dark !important;
+        border-color:$dark !important;
+      }
     }
   }
   @include media-breakpoint-down(md) {

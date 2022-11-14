@@ -79,6 +79,7 @@ class InnovationTracker extends Timber\Site {
 		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 		add_filter( 'body_class', [ $this, 'modify_body_class'] );
+    add_filter( 'nav_menu_css_class', [$this, 'activate_nav'], 10, 2 );
     add_action( 'init', [$this, 'register_taxonomies'], 1);
 		add_action( 'init', [$this, 'register_post_types'], 1);
     add_action( 'init', [$this, 'register_filters'], 1);
@@ -93,6 +94,7 @@ class InnovationTracker extends Timber\Site {
 
 		parent::__construct();
 	}
+
 
   public function innovationtracker_enqueue_scripts() {
     wp_enqueue_script('jquery');
@@ -123,6 +125,13 @@ class InnovationTracker extends Timber\Site {
 		}
     return $classes;
 	}
+
+   public function activate_nav( $classes, $item ) {
+    if ( is_single() && 'post' == get_post_type() && 'insights' == $item->slug && !in_array( 'current_page_item', $classes ) ) {
+      $classes[] = 'current_page_item'; // setting current menu item      
+    }                         
+    return $classes;
+  }
 
 	public function theme_supports() {
 		add_theme_support( 'post-thumbnails', array( 'post','page' ) ); 

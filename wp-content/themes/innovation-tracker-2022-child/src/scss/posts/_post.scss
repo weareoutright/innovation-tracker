@@ -1,6 +1,12 @@
 .single-post {
+  h1 {
+    @include typeHeaderLarge;
+  }
   .post__content {
     padding-top:em(92);
+    .container > .row > .col-12 {
+      max-width:800px;
+    }
     p {
       margin-bottom:em(33);
     }

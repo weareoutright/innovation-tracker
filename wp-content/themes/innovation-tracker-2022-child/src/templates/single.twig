@@ -2,7 +2,7 @@
 
 {% set post_date %}
     {% if date_format is not defined %}
-        {% set date_format = 'j M Y' %}
+        {% set date_format = 'M j, Y' %}
     {% endif %}
     <div class="post-preview__date">
         {% if date().diff(date(post.date)).days > 2 %}      
@@ -18,8 +18,7 @@
     fields:{
       headline: post.title,
       description: post.post_excerpt,
-      meta: post_date,
-      hero_image: (post.thumbnail ? post.thumbnail.src : null)
+      meta: post_date
     }
   }%}
 {% endblock %}

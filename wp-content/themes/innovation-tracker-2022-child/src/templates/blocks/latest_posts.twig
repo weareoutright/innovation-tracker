@@ -18,9 +18,11 @@
         <div class="latest_posts__posts">
           <div class="row">
             {% for post in latest_posts %}
-              <div class="col-12 col-lg-4">
-                {% include 'post-preview.twig' with {post:post,classes:[]} %}
-              </div>
+              {% if exclude is null or post.id not in exclude %}
+                <div class="col-12 col-lg-4">
+                  {% include 'post-preview.twig' with {post:post,classes:[]} %}
+                </div>
+              {% endif %}
             {% endfor %}
           </div>
         </div>

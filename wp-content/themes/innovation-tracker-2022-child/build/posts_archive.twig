@@ -16,6 +16,11 @@
                 {% include 'post-preview.twig' with {post:post,classes:[]} %}
               </div>
             {% endfor %}
+            {% if posts|length < 3 %}
+              <div class="col-12 col-lg-4">
+                {% include 'post-preview.twig' with {post:{title:'Definitions and Methodology',post_type:'post', link: '/methodology', thumbnail: {src: '/wp-content/uploads/2022/11/HeroImage.png'},date:'2022-11-01'},classes:[]} %}
+              </div>
+            {% endif %}
           </div>
         </div>
       </div>

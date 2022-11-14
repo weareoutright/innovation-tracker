@@ -16,11 +16,10 @@
       margin-top:1em;
     }
   }
-  #site-main {
-    background:$light;
-  }
   .post__content {
     padding-top:em(92);
+    padding-bottom:em(134);
+    background:$light;
     .container > .row > .col-12 {
       max-width:800px;
     }
@@ -44,6 +43,8 @@
     }
   }
   .component-latest-posts {
+    @extend .component-cream;
+    padding:em(92) 0 0;
     .latest_posts__headline,.latest_posts__description {
       text-align:left;
     }

@@ -40,8 +40,8 @@
 {% endblock %}
 
 {% block below_content %}
-  {% include 'latest_posts.twig' with {exclude: [post.id], fields: {headline: 'More Insights'}} %}
   <div class="container">
     {% if block_back_to_top %}{{ function('apply_filters','the_content','<!-- wp:block {"ref":' ~ block_back_to_top.ID ~ '} /-->') }}{% endif %}
   </div>
+  {% include 'latest_posts.twig' with {exclude: [post.id], fields: {headline: 'More Insights'}} %}
 {% endblock %}

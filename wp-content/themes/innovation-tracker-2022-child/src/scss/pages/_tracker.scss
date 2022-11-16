@@ -1,0 +1,8 @@
+.page-tracker {
+  #block-footeredf2020 {
+    display:none;
+  }
+  .navbar-site {
+    @include navbar-with-trigger;
+  }
+}

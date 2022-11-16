@@ -1,0 +1,14 @@
+{% extends 'base-single.twig' %}
+
+{% block above_content %}
+  {% include 'hero_with_cta.twig' with {
+    fields:{
+      headline: post.title,
+      description: post.post_excerpt,
+      meta: post_date,
+      hero_image: (post.thumbnail ? post.thumbnail.src : null),
+      cta: 'Explore the tracker',
+      cta_link: '/tracker'
+    }
+  }%}
+{% endblock %}

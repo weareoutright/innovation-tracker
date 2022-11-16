@@ -1,0 +1,21 @@
+.block-back-to-top {
+  background:transparent !important;
+  padding-top:0!important;
+  padding-bottom:0!important;
+  margin-top:em(-42);
+  .wp-block-group__inner-container {
+    text-align:right;
+    a {
+      display:inline-block;
+      @include typeLinkUnderlineOnHover;
+      @include typeLinkContrast;
+      background:$darkest;
+      font-weight:900;
+      padding:em(10) em(12);
+      i {
+        display:inline-block;
+        margin-left:.5em;
+      }
+    }
+  }
+}

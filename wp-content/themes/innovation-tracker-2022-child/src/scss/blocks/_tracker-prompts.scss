@@ -1,0 +1,47 @@
+.component.component-tracker-prompts {
+  padding:em(296) 0 em(221);
+  .tracker-prompts__intro {
+    margin-bottom:em(85);
+    h2 {
+      @include typeHeaderLarge;
+      @include typeHeaderContrast;
+      text-align:center;
+    }
+  }
+  .tracker-prompts__prompt {
+    display:flex;
+    margin-bottom:em(63);
+    align-items:center;
+    > * {
+      flex:auto;
+    }
+    .prompt__prompt {
+      @include typeLarger;
+      @include typeContrast;
+      white-space:nowrap;
+      padding-right:1em;
+    }
+    .prompt__question {
+
+    }
+  }
+  @include media-breakpoint-down(xl) {
+    .tracker-prompts__prompt {
+      flex-direction:column;
+      .prompt__prompt {
+        margin-bottom:.5em;
+        white-space:default;
+        padding-right:0;
+      }
+      .prompt__question {
+        max-width:em(680);
+      }
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    padding:em(176) 0 em(121);
+  }
+  @include media-breakpoint-down(md) {
+    padding:em(176) 0 em(79);
+  }
+}

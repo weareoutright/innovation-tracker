@@ -104,7 +104,7 @@ class InnovationTracker extends Timber\Site {
   public function innovationtracker_enqueue_styles() {
     wp_dequeue_style('twenty-twenty-one-style');
     wp_dequeue_style('parent-style');
-    wp_enqueue_style('edf-theme','//www.edf.org/sites/default/files/css/css_9FM_cdwwfNjw_dPYBpRvqC5H8dsxhKT3Mmn5kRqgc3o.css', array(), null);
+    wp_enqueue_style( 'edf-theme', get_stylesheet_directory_uri() . '/edf-theme.css', array(), null);
     wp_enqueue_style( 'child-style', get_stylesheet_uri(), array(), null);
   }
 

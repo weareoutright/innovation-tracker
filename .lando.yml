@@ -1,0 +1,6 @@
+name: edf-innovationtracker
+recipe: pantheon
+config:
+  framework: wordpress
+  site: edf-innovationtracker
+  id: 1fc3f702-1658-4fda-874a-3588540f50e7
